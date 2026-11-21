@@ -17,7 +17,7 @@ export default function RoleSwitcherBar() {
   ];
 
   return (
-    <div className="bg-[#0D2418] text-[#FAF5EB] text-xs py-1.5 px-3 border-b-2 border-[#C71F2D]/40 flex items-center justify-between gap-2 z-50 sticky top-0 sm:relative">
+    <div className="bg-[#0D2418] text-[#FAF5EB] text-xs py-1.5 px-3 border-b border-[#C71F2D]/30 flex items-center justify-between gap-2 z-30 relative">
       <div className="flex items-center gap-1.5 shrink-0">
         <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
         <span className="font-bold text-white text-[11px] sm:text-xs">Gogamukh Mart</span>
@@ -27,7 +27,7 @@ export default function RoleSwitcherBar() {
         </span>
       </div>
 
-      {/* Responsive role buttons with horizontal scroll on mobile */}
+      {/* Responsive role buttons with smooth horizontal touch scroll */}
       <div className="flex items-center gap-1 bg-black/40 p-0.5 sm:p-1 rounded-xl border border-white/10 overflow-x-auto no-scrollbar shrink-0">
         <span className="text-[9px] uppercase font-bold text-forest-300 px-1 hidden md:inline">Mode:</span>
         {roles.map((r) => {
@@ -37,7 +37,7 @@ export default function RoleSwitcherBar() {
               key={r.role}
               href={r.href}
               onClick={() => setCurrentUserRole(r.role)}
-              className={`flex items-center gap-1 px-2 py-1 rounded-lg text-[10px] sm:text-[11px] font-bold transition-all whitespace-nowrap ${
+              className={`flex items-center gap-1 px-2 py-0.5 sm:py-1 rounded-lg text-[10px] sm:text-[11px] font-bold transition-all whitespace-nowrap ${
                 isActive
                   ? "bg-[#C71F2D] text-white shadow-sm"
                   : "text-[#FAF5EB]/80 hover:text-white hover:bg-white/10"

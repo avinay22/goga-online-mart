@@ -5,6 +5,7 @@ import RoleSwitcherBar from "@/components/navigation/RoleSwitcherBar";
 import Header from "@/components/navigation/Header";
 import Footer from "@/components/navigation/Footer";
 import BottomNav from "@/components/navigation/BottomNav";
+import FloatingCartBar from "@/components/navigation/FloatingCartBar";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -36,8 +37,9 @@ export default function RootLayout({
         <MarketplaceProvider>
           <RoleSwitcherBar />
           <Header />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 pb-24 md:pb-0">{children}</main>
           <Footer />
+          <FloatingCartBar />
           <BottomNav />
         </MarketplaceProvider>
       </body>
