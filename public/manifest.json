@@ -1,0 +1,22 @@
+{
+  "name": "Gogamukh Online Mart",
+  "short_name": "Gogamukh Mart",
+  "description": "Our Gogamukh • Our Shops • Our Doorsteps. Hyper-local shopping & Tum-Tum delivery for Gogamukh, Dhemaji, Assam.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFDF8",
+  "theme_color": "#C71F2D",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
