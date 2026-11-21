@@ -42,11 +42,11 @@ export default function HomePage() {
   const { completedDeliveriesCount, freeDeliveriesAvailable, gogoPoints } = useMarketplace();
 
   return (
-    <div className="space-y-8 sm:space-y-16 pb-16 bg-[#FFFDF8]">
+    <div className="space-y-6 sm:space-y-16 pb-16 bg-[#FFFDF8] max-w-full overflow-hidden">
       {/* =====================================================================
           1. GRAND ASSAMESE HERITAGE HERO PAVILION
       ===================================================================== */}
-      <section className="relative bg-gradient-to-b from-[#FFFDF8] via-[#FAF4EA] to-[#FFFDF8] text-charcoal-900 overflow-hidden pt-4 sm:pt-12 pb-8 sm:pb-16 border-b-4 border-[#C71F2D]">
+      <section className="relative bg-gradient-to-b from-[#FFFDF8] via-[#FAF4EA] to-[#FFFDF8] text-charcoal-900 overflow-hidden pt-4 sm:pt-12 pb-6 sm:pb-16 border-b-4 border-[#C71F2D]">
         {/* Decorative Traditional Folk Tree Creepers in background corners (large screens) */}
         <div className="absolute top-6 left-6 opacity-25 pointer-events-none hidden xl:block">
           <TraditionalFolkTreeMotif className="w-40 h-40" />
@@ -55,13 +55,18 @@ export default function HomePage() {
           <TraditionalFolkTreeMotif className="w-40 h-40" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center">
             {/* Left Column: Traditional Hero Content & Slogan */}
-            <div className="lg:col-span-7 space-y-4 sm:space-y-6 text-center lg:text-left">
+            <div className="lg:col-span-7 space-y-3.5 sm:space-y-6 text-center lg:text-left">
+              {/* Mobile Centered Jaapi Crest (Shown on phone to create an elegant top emblem) */}
+              <div className="lg:hidden flex justify-center pt-1">
+                <MasterJaapiGamusaCrest className="w-20 h-20 drop-shadow-md" />
+              </div>
+
               {/* Cultural Badge with Authentic Jaapi & Bihu Dhol Emblems */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border-2 border-[#C71F2D]/30 shadow-sm">
-                <BihuDholPepaIcon className="w-4 h-4 shrink-0" />
+              <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-white border-2 border-[#C71F2D]/30 shadow-sm">
+                <BihuDholPepaIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
                 <span className="text-[10px] sm:text-xs font-serif font-black text-[#C71F2D] uppercase tracking-wider">
                   Gogamukh Town Hyper-Local Mart
                 </span>
@@ -71,8 +76,8 @@ export default function HomePage() {
               </div>
 
               {/* Exact Tagline requested in English: "Our Gogamukh. Our Shops. Our Doorsteps." */}
-              <div className="space-y-1">
-                <h1 className="font-serif font-black text-3xl sm:text-5xl lg:text-7xl text-forest-950 tracking-tight leading-[1.1]">
+              <div className="space-y-0.5 sm:space-y-1">
+                <h1 className="font-serif font-black text-3xl sm:text-5xl lg:text-7xl text-forest-950 tracking-tight leading-[1.08]">
                   Our Gogamukh. <br />
                   Our Shops. <br />
                   <span className="text-[#C71F2D] underline decoration-[#D4A338] decoration-wavy decoration-2">
@@ -86,17 +91,17 @@ export default function HomePage() {
               </p>
 
               {/* Traditional Action Buttons */}
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-1">
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 sm:gap-4 pt-1">
                 <Link
                   href="/categories"
-                  className="px-6 py-3.5 sm:px-7 sm:py-4 rounded-2xl bg-[#C71F2D] hover:bg-[#A81925] text-white font-black text-xs sm:text-sm shadow-xl transition-all flex items-center gap-2 border-2 border-white/30 active:scale-95"
+                  className="px-6 py-3 sm:px-7 sm:py-4 rounded-2xl bg-[#C71F2D] hover:bg-[#A81925] text-white font-black text-xs sm:text-sm shadow-xl transition-all flex items-center gap-2 border-2 border-white/30 active:scale-95"
                 >
                   <span>Explore 10 Categories</span>
                   <ArrowRight className="w-4 h-4 text-[#F5D061]" />
                 </Link>
                 <Link
                   href="/tiffin"
-                  className="px-5 py-3.5 sm:px-6 sm:py-4 rounded-2xl bg-white hover:bg-[#FAF4EA] text-forest-950 border-2 border-[#C71F2D]/30 font-bold text-xs sm:text-sm shadow-sm transition-all flex items-center gap-2 hover:border-[#C71F2D] active:scale-95"
+                  className="px-5 py-3 sm:px-6 sm:py-4 rounded-2xl bg-white hover:bg-[#FAF4EA] text-forest-950 border-2 border-[#C71F2D]/30 font-bold text-xs sm:text-sm shadow-sm transition-all flex items-center gap-2 hover:border-[#C71F2D] active:scale-95"
                 >
                   <XoraiWithGamusaIcon className="w-4 h-4 sm:w-5 sm:h-5" />
                   <span>Daily Tiffin</span>
@@ -104,7 +109,7 @@ export default function HomePage() {
               </div>
 
               {/* Trust Indicators */}
-              <div className="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 text-[11px] sm:text-xs text-forest-800 font-bold">
+              <div className="pt-1.5 flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 text-[11px] sm:text-xs text-forest-800 font-bold">
                 <div className="flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-[#C71F2D] animate-ping" />
                   <span>100% Town Merchants</span>
@@ -116,21 +121,21 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right Column: Grand Assamese Heritage Pavilion Graphic */}
-            <div className="lg:col-span-5 flex flex-col items-center">
-              <AssameseHeritagePavilion className="w-full max-w-[300px] sm:max-w-md" />
+            {/* Desktop Right Column: Grand Assamese Heritage Pavilion Graphic (Hidden on mobile to preserve perfect phone layout!) */}
+            <div className="hidden lg:flex lg:col-span-5 flex-col items-center">
+              <AssameseHeritagePavilion className="w-full max-w-md" />
             </div>
           </div>
         </div>
       </section>
 
       {/* Full-Width Phulam Gamusa Floral Tapestry Ribbon */}
-      <AuthenticGamusaBanner className="h-5 sm:h-7 w-full shadow-md" />
+      <AuthenticGamusaBanner className="h-4 sm:h-7 w-full shadow-md" />
 
       {/* =====================================================================
           MOBILE QUICK HORIZONTAL CATEGORY SCROLL (Swiggy / Blinkit style)
       ===================================================================== */}
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between pb-2">
           <span className="text-[11px] font-black text-[#C71F2D] uppercase tracking-wider">
             Quick Categories
@@ -167,7 +172,7 @@ export default function HomePage() {
       {/* =====================================================================
           2. ASSAMESE HERITAGE TOWN PILLARS (4 Cultural Highlights)
       ===================================================================== */}
-      <section className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-5">
           {/* Card 1: Verified Local Town Shops */}
           <div className="gamusa-card p-4 sm:p-5 relative overflow-hidden flex flex-col justify-between">
@@ -254,7 +259,7 @@ export default function HomePage() {
       {/* =====================================================================
           3. 5-DELIVERY REWARD LOOP (Styled as Assamese Felicitation Certificate)
       ===================================================================== */}
-      <section className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="gamusa-certificate rounded-3xl p-4 sm:p-10 relative overflow-hidden bg-[#FFFDF8]">
           <AuthenticGamusaBanner className="absolute top-0 left-0 right-0 h-2.5 sm:h-3" />
 
@@ -341,7 +346,7 @@ export default function HomePage() {
       {/* =====================================================================
           4. FEATURED LOCAL SHOPS
       ===================================================================== */}
-      <section className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-2 mb-4 sm:mb-8 pb-2 sm:pb-3 border-b-2 border-[#C71F2D]/20">
           <div>
             <div className="flex items-center gap-1.5">
@@ -419,7 +424,7 @@ export default function HomePage() {
       {/* =====================================================================
           5. POPULAR LOCAL PRODUCTS
       ===================================================================== */}
-      <section className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-2 mb-4 sm:mb-8 pb-2 sm:pb-3 border-b-2 border-[#C71F2D]/20">
           <div>
             <h2 className="font-serif font-black text-xl sm:text-4xl text-forest-950">
@@ -441,7 +446,7 @@ export default function HomePage() {
       {/* =====================================================================
           6. ASSAMESE HOMESTYLE TIFFIN BANNER
       ===================================================================== */}
-      <section className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-gradient-to-r from-[#8A111C] via-[#C71F2D] to-[#730D16] rounded-3xl p-5 sm:p-12 text-white shadow-2xl relative overflow-hidden border-4 border-[#D4A338]">
           <AuthenticGamusaBanner className="absolute top-0 left-0 right-0 h-2.5 sm:h-3 opacity-95" />
 
@@ -476,7 +481,7 @@ export default function HomePage() {
       {/* =====================================================================
           7. GOGAMUKH SHOPPING CHAMPIONS & ECO RETURN-A-BAG
       ===================================================================== */}
-      <section className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8">
           {/* Champions Leaderboard */}
           <div className="lg:col-span-7 gamusa-card p-4 sm:p-8">

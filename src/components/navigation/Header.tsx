@@ -26,52 +26,29 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 bg-[#FFFDF8]/98 backdrop-blur-md border-b-2 border-[#C71F2D]/20 shadow-sm">
+      <header className="sticky top-0 z-40 bg-[#FFFDF8]/98 backdrop-blur-md border-b-2 border-[#C71F2D]/20 shadow-sm w-full">
         {/* Authentic Assamese Phulam Gamusa Ribbon */}
-        <AuthenticGamusaBanner className="h-3 sm:h-4 w-full shadow-inner" />
+        <AuthenticGamusaBanner className="h-2.5 sm:h-4 w-full shadow-inner" />
 
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 sm:h-20 gap-2 sm:gap-6">
-            {/* Brand Logo & Tagline with Master Jaapi & Gamusa Crest */}
-            <Link href="/" className="flex items-center gap-2 sm:gap-3.5 shrink-0 group">
-              <div className="relative w-11 h-11 sm:w-14 sm:h-14 flex items-center justify-center p-0.5 group-hover:scale-105 transition-transform duration-300">
+          <div className="flex items-center justify-between h-14 sm:h-20 gap-2 sm:gap-6">
+            {/* Left: Brand Logo & Title */}
+            <Link href="/" className="flex items-center gap-1.5 sm:gap-3 shrink-0">
+              <div className="relative w-8 h-8 sm:w-13 sm:h-13 flex items-center justify-center shrink-0">
                 <MasterJaapiGamusaCrest className="w-full h-full drop-shadow-md" />
               </div>
               <div className="flex flex-col">
-                <div className="flex items-baseline gap-1">
-                  <span className="font-serif font-black text-lg sm:text-2xl text-forest-950 tracking-tight leading-none">
-                    Gogamukh <span className="text-[#C71F2D] font-extrabold">Mart</span>
-                  </span>
-                </div>
-                {/* Clean English Tagline */}
-                <span className="text-[10px] sm:text-xs font-serif font-bold text-[#C71F2D] tracking-tight mt-0.5">
+                <span className="font-serif font-black text-base sm:text-2xl text-forest-950 tracking-tight leading-none">
+                  Gogamukh <span className="text-[#C71F2D]">Mart</span>
+                </span>
+                {/* Desktop tagline only (on mobile, the hero section displays the tagline prominently) */}
+                <span className="hidden sm:inline text-[10px] sm:text-xs font-serif font-bold text-[#C71F2D] tracking-tight mt-0.5">
                   Our Gogamukh • Our Shops • Our Doorsteps
                 </span>
               </div>
             </Link>
 
-            {/* Delivery Location Selector */}
-            <div className="relative">
-              <button
-                onClick={() => setIsAddressModalOpen(true)}
-                className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl bg-white hover:bg-[#FAF4EA] border border-[#C71F2D]/20 hover:border-[#C71F2D]/40 text-left transition-colors max-w-[130px] sm:max-w-[220px] shadow-sm"
-              >
-                <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg bg-[#C71F2D] flex items-center justify-center text-white shrink-0 shadow-sm">
-                  <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                </div>
-                <div className="truncate text-[11px] sm:text-xs">
-                  <div className="font-black text-forest-950 flex items-center gap-1">
-                    <span className="truncate">{selectedAddress.area_colony}</span>
-                    <ChevronDown className="w-3 h-3 text-forest-600 shrink-0" />
-                  </div>
-                  <div className="text-[9px] sm:text-[10px] text-forest-600 truncate hidden xs:block">
-                    {selectedAddress.address_line1}
-                  </div>
-                </div>
-              </button>
-            </div>
-
-            {/* Desktop Universal Search Bar */}
+            {/* Middle: Universal Search Bar (desktop) */}
             <div className="flex-1 max-w-md hidden md:block">
               <div className="relative">
                 <input
@@ -85,8 +62,24 @@ export default function Header() {
               </div>
             </div>
 
-            {/* Right Nav Utilities: Tiffin, Rewards & Cart */}
-            <div className="flex items-center gap-1.5 sm:gap-3">
+            {/* Right: Location & Utilities (Compact, fits perfectly on any phone) */}
+            <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
+              {/* Delivery Location Selector */}
+              <button
+                onClick={() => setIsAddressModalOpen(true)}
+                className="flex items-center gap-1 px-2 py-1.5 sm:px-3 sm:py-2 rounded-xl bg-white hover:bg-[#FAF4EA] border border-[#C71F2D]/25 text-left transition-colors max-w-[115px] sm:max-w-[210px] shadow-sm shrink-0"
+              >
+                <div className="w-5 h-5 sm:w-7 sm:h-7 rounded-lg bg-[#C71F2D] flex items-center justify-center text-white shrink-0">
+                  <MapPin className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                </div>
+                <div className="truncate text-[10px] sm:text-xs">
+                  <div className="font-black text-forest-950 flex items-center gap-0.5">
+                    <span className="truncate">{selectedAddress.area_colony}</span>
+                    <ChevronDown className="w-2.5 h-2.5 text-forest-600 shrink-0" />
+                  </div>
+                </div>
+              </button>
+
               {/* Daily Tiffin link (desktop) */}
               <Link
                 href="/tiffin"
@@ -96,7 +89,7 @@ export default function Header() {
                 <span>Daily Tiffin</span>
               </Link>
 
-              {/* Gogo Rewards Badge */}
+              {/* Gogo Rewards Badge (desktop/tablet) */}
               <Link
                 href="/rewards"
                 className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 sm:py-2 rounded-xl bg-[#FAF4EA] border border-[#D4A338]/50 text-forest-950 hover:bg-white transition-colors text-xs font-bold shadow-sm"
@@ -105,20 +98,21 @@ export default function Header() {
                 <span className="font-black text-[#C71F2D]">{gogoPoints} pts</span>
               </Link>
 
-              {/* Cart Button */}
+              {/* Cart Button (Always fully visible on mobile right edge!) */}
               <Link
                 href="/cart"
-                className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2.5 rounded-xl bg-[#C71F2D] hover:bg-[#A81925] text-white font-black text-xs sm:text-sm shadow-md transition-all relative border border-white/20 active:scale-95"
+                className="flex items-center justify-center w-8 h-8 sm:w-auto sm:px-4 sm:py-2.5 rounded-xl bg-[#C71F2D] hover:bg-[#A81925] text-white font-black text-xs sm:text-sm shadow-md transition-all relative border border-white/20 active:scale-95 shrink-0"
+                aria-label="View shopping cart"
               >
                 <ShoppingBag className="w-4 h-4 text-white" />
-                <span className="hidden sm:inline">Cart</span>
+                <span className="hidden sm:inline sm:ml-1.5">Cart</span>
                 {cartItemCount > 0 && (
-                  <span className="bg-[#FAF4EA] text-[#C71F2D] font-black text-[10px] w-5 h-5 rounded-full flex items-center justify-center -ml-0.5 border-2 border-white shadow-sm">
+                  <span className="absolute -top-1.5 -right-1.5 bg-white text-[#C71F2D] font-black text-[9px] w-4 h-4 rounded-full flex items-center justify-center border-2 border-[#C71F2D] shadow-sm">
                     {cartItemCount}
                   </span>
                 )}
                 {cartTotal > 0 && (
-                  <span className="hidden md:inline font-extrabold text-white border-l border-white/30 pl-2">
+                  <span className="hidden md:inline font-extrabold text-white border-l border-white/30 pl-2 ml-1.5">
                     {formatPrice(cartTotal)}
                   </span>
                 )}
@@ -126,17 +120,17 @@ export default function Header() {
             </div>
           </div>
 
-          {/* Mobile Search Bar Row (Ultra-clean and full-width) */}
-          <div className="pb-2.5 md:hidden">
+          {/* Mobile Search Bar Row (Clean, perfectly contained inside padding) */}
+          <div className="pb-2 md:hidden">
             <div className="relative">
               <input
                 type="text"
                 placeholder="Search Joha rice, fish tenga, medicine, shops..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-white pl-9 pr-4 py-2 text-xs rounded-xl border border-[#C71F2D]/20 focus:outline-none focus:ring-2 focus:ring-[#C71F2D]/30 text-charcoal-900 shadow-inner"
+                className="w-full bg-white pl-8 pr-3 py-1.5 text-xs rounded-xl border border-[#C71F2D]/20 focus:outline-none focus:ring-2 focus:ring-[#C71F2D]/30 text-charcoal-900 shadow-inner"
               />
-              <Search className="w-3.5 h-3.5 text-[#C71F2D] absolute left-3 top-1/2 -translate-y-1/2" />
+              <Search className="w-3.5 h-3.5 text-[#C71F2D] absolute left-2.5 top-1/2 -translate-y-1/2" />
             </div>
           </div>
         </div>
